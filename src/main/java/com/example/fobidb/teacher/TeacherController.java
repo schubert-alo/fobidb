@@ -11,7 +11,7 @@ import java.util.List;
 public class TeacherController {
 
     @GetMapping
-    public List<Teacher> getTeachers() {
+    public List<Teacher> getTeachers() { //ist getTeachers() eine von Spring bereitgestellte Methode?
         return List.of(
                 new Teacher(
                         1,
