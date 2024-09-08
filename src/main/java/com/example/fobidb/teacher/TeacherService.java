@@ -7,7 +7,7 @@ import java.util.List;
 @Service
 public class TeacherService {
 
-    public List<Teacher> getTeachers() { //ist getTeachers() eine von Spring bereitgestellte Methode?
+    public List<Teacher> getTeachers() {
         return List.of(
                 new Teacher(
                         1,
