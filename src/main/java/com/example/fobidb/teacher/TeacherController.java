@@ -7,6 +7,8 @@ import org.springframework.web.bind.annotation.RestController;
 
 import java.util.List;
 
+// API LAYER *******************************************************
+
 @RestController
 @RequestMapping(path = "api/v1/teacher")
 public class TeacherController {
@@ -17,9 +19,9 @@ public class TeacherController {
     public TeacherController(TeacherService teacherService) {
         this.teacherService = teacherService;
     }
- 
+
     @GetMapping
-    public List<Teacher> getTeachers() { //ist getTeachers() eine von Spring bereitgestellte Methode?
+    public List<Teacher> getTeachers() {
         return teacherService.getTeachers();
     }
 
