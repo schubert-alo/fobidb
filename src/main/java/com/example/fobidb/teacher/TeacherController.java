@@ -1,16 +1,14 @@
 package com.example.fobidb.teacher;
 
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
 // API LAYER *******************************************************
 
-@RestController
-@RequestMapping(path = "api/v1/teacher")
+@RestController //Die Klasse ist ein Rest-Controller. Dies bedeutet, dass sie HTTP-Anfragen empfängt und HTTP-Antworten zurückgibt.
+@RequestMapping(path = "api/v1/teacher") //Pfad im Browser
 public class TeacherController {
 
     private final TeacherService teacherService;
@@ -23,6 +21,11 @@ public class TeacherController {
     @GetMapping
     public List<Teacher> getTeachers() {
         return teacherService.getTeachers();
+    }
+
+    @PostMapping
+    public void egisterNewTeacher(@RequestBody Teacher teacher){
+        teacherService.addNewTeacher(teacher);
     }
 
 }
