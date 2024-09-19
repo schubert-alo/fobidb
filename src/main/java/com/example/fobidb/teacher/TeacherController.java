@@ -24,7 +24,7 @@ public class TeacherController {
     }
 
     @PostMapping
-    public void egisterNewTeacher(@RequestBody Teacher teacher){
+    public void registerNewTeacher(@RequestBody Teacher teacher){
         teacherService.addNewTeacher(teacher);
     }
 
