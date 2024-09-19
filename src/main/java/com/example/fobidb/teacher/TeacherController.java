@@ -27,5 +27,4 @@ public class TeacherController {
     public void registerNewTeacher(@RequestBody Teacher teacher){
         teacherService.addNewTeacher(teacher);
     }
-
 }

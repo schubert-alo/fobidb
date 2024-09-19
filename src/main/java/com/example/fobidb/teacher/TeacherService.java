@@ -4,6 +4,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
+import java.util.Optional;
 
 
 // Service LAYER *******************************************************
@@ -23,6 +24,10 @@ public class  TeacherService {
     }
 
     public void addNewTeacher(Teacher teacher) {
-        System.out.println(teacher);
+        Optional<Teacher> teacherOptional = teacherRepository.findByEmail(teacher.getEmail());
+        if (teacherOptional.isPresent()) {
+            throw new IllegalStateException("email already in use");
+        }
+        teacherRepository.save(teacher);
     }
 }
