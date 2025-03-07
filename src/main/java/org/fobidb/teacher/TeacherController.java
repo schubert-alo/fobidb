@@ -1,4 +1,4 @@
-package com.example.fobidb.teacher;
+package org.fobidb.teacher;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
@@ -7,7 +7,7 @@ import java.util.List;
 
 // API LAYER *******************************************************
 
-@RestController //Die Klasse ist ein Rest-Controller. Dies bedeutet, dass sie HTTP-Anfragen empfängt und HTTP-Antworten zurückgibt.
+@RestController //Die Klasse ist ein Rest-Controller. Dies bedeutet, dass sie HTTP-Anfragen empfängt und HTTP-Antworten zurückgibt. Außerdem: Alle Objekte sind Beans
 @RequestMapping(path = "api/v1/teacher") //Pfad im Browser
 public class TeacherController {
 

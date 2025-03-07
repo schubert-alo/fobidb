@@ -1,4 +1,4 @@
-package com.example.fobidb.teacher;
+package org.fobidb.teacher;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;

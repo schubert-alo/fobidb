@@ -1,4 +1,4 @@
-package com.example.fobidb.teacher;
+package org.fobidb.teacher;
 
 import jakarta.persistence.*;
 
