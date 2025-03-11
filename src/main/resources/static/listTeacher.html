@@ -2,7 +2,7 @@
 <html lang="de">
 <head>
   <meta charset="UTF-8">
-  <title>Lehrer hinzufügen und anzeigen</title>
+  <title>Lehrer anzeigen</title>
   <style>
     table {
       width: 100%;
@@ -20,27 +20,7 @@
   </style>
 </head>
 <body>
-<h1>Neuen Lehrer hinzufügen</h1>
-<form id="teacherForm">
-  <label for="surname">Nachname:</label>
-  <input type="text" id="surname" name="surname" required><br><br>
-
-  <label for="name">Vorname:</label>
-  <input type="text" id="name" name="name" required><br><br>
-
-  <label for="name_short">Kurzname:</label>
-  <input type="text" id="name_short" name="name_short" required><br><br>
-
-  <label for="email">Email:</label>
-  <input type="email" id="email" name="email" required><br><br>
-
-  <label for="training_time">Ausbildungszeit:</label>
-  <input type="text" id="training_time" name="training_time" required><br><br>
-
-  <button type="button" onclick="submitForm()">Lehrer hinzufügen</button>
-</form>
-
-<h2>Liste der Lehrer</h2>
+<h1>Liste der Lehrer</h1>
 <table id="teachersTable">
   <thead>
   <tr>
@@ -58,33 +38,6 @@
 </table>
 
 <script>
-  function submitForm() {
-    const formData = {
-      surname: document.getElementById('surname').value,
-      name: document.getElementById('name').value,
-      name_short: document.getElementById('name_short').value,
-      email: document.getElementById('email').value,
-      training_time: document.getElementById('training_time').value
-    };
-
-    fetch('http://localhost:8080/api/v1/teacher', {
-      method: 'POST',
-      headers: {
-        'Content-Type': 'application/json'
-      },
-      body: JSON.stringify(formData)
-    })
-            .then(response => {
-              if (response.ok) {
-                alert('Lehrer erfolgreich hinzugefügt!');
-                loadTeachers(); // Aktualisieren Sie die Liste der Lehrer
-              } else {
-                alert('Fehler beim Hinzufügen des Lehrers.');
-              }
-            })
-            .catch(error => console.error('Fehler:', error));
-  }
-
   function loadTeachers() {
     fetch('http://localhost:8080/api/v1/teacher')
             .then(response => response.json())
